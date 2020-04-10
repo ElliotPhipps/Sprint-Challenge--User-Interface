@@ -1,9 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-
    v2.0 | 20110126
-
    License: none (public domain)
-
 */
 
 html, body, div, span, applet, object, iframe,
@@ -16,34 +13,30 @@ del, dfn, em, img, ins, kbd, q, s, samp,
 
 small, strike, strong, sub, sup, tt, var,
 
-b, u, i, center,
+b, u, i, center, dl, dt, dd, ol, ul, li,
 
-dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, 
 
-fieldset, form, label, legend,
+tbody, tfoot, thead, tr, th, td, article, aside, 
 
-table, caption, tbody, tfoot, thead, tr, th, td,
+canvas, details, embed, figure, figcaption, footer,
 
-article, aside, canvas, details, embed, 
-
-figure, figcaption, footer, header, hgroup, 
-
-menu, nav, output, ruby, section, summary,
+header, hgroup, menu, nav, output, ruby, section, summary,
 
 time, mark, audio, video {
 
     margin: 0;
-    
+
     padding: 0;
-    
+
     border: 0;
-    
+
     font-size: 100%;
-    
+
     font: inherit;
-    
+
     vertical-align: baseline;
-    
+
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -53,32 +46,33 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 
     display: block;
-    
+
 }
 
 body {
 
     line-height: 1;
-    
+
 }
 
 ol, ul {
 
     list-style: none;
-    
+
 }
 
 blockquote, q {
 
     quotes: none;
-    
+
 }
 
 blockquote:before, blockquote:after,
 
 q:before, q:after {
+
     content: '';
-    
+
     content: none;
 
 }
@@ -86,9 +80,9 @@ q:before, q:after {
 table {
 
     border-collapse: collapse;
-    
+
     border-spacing: 0;
-    
+
 }
 
 * {
@@ -125,21 +119,24 @@ header {
 
     display: flex;
 
-    justify-content: space-evenly;
-
+    justify-content: space-between;
+    
     align-items: baseline;
 
-}
-
-.logo {
-
-    justify-content: flex-start;
+    margin: 5% 0;
 
 }
 
+nav {
+
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+}
 nav a {
 
-    justify-content: space-evenly;
+    
 
     text-decoration: none;
 
@@ -153,15 +150,19 @@ nav a {
 
     justify-content: center;
 
-    margin: 2%;
+    margin-bottom: 3%;
 
 }
+
+.header-img img{
+    width: 100%;
+ }
 
 .container {
 
     width: 800px;
 
-    margin: 0 auto;
+    margin: 0 auto ;
 
 }
 
@@ -176,6 +177,8 @@ nav a {
     margin-bottom: 20px;
 
     border-bottom: 1px dashed black;
+
+    width: 100%;
 
 }
 
@@ -234,72 +237,52 @@ nav a {
 }
 
 #box1 {
-
     background-color: teal ;
     
 }
-
 #box2 {
-
     background-color: gold ;
     
 }
-
 #box3 {
-
     background-color: cadetblue ;
     
 }
-
 #box4 {
-
     background-color: coral ;
     
 }
-
 #box5 {
-
     background-color: crimson ;
     
 }
-
 #box6 {
-
     background-color: forestgreen ;
     
 }
-
 #box7 {
 
     background-color: darkorchid ;
     
 }
-
 #box8 {
-
     background-color: hotpink ;
     
 }
-
-
 #box9 {
-
     background-color: indigo ;
     
 }
-
-
 #box10 {
-
     background-color: dodgerblue ;
-    
+
 }
 
 .bottom-content {
 
     display: flex;
 
-    margin: 0 2% 20px;
+    
 
     justify-content: space-around;
 
@@ -313,7 +296,7 @@ nav a {
 
 .bottom-content .text-container:last-child {
 
-    padding-right: 0;
+   
 
 }
 
@@ -347,6 +330,7 @@ footer nav a {
 
     text-decoration: none;
 
+
 }
 
 /*media queries*/
@@ -364,7 +348,7 @@ footer nav a {
         justify-content: space-evenly;
 
     }
-    
+
     .logo {
 
         margin-top: 1%;
@@ -385,13 +369,13 @@ footer nav a {
 
     .top-content {
 
-        margin-right: 2%;
+        
 
     }
 
     .boxes {
 
-        margin-right: 1%;
+        
 
     }
 
@@ -401,14 +385,20 @@ footer nav a {
 
 @media (max-width: 500px) {
 
+    nav {
+
+        flex-direction: column;
+        align-items: center;
+    }
     nav a {
 
         display: flex;
 
         flex-direction: column;
-
+        align-items: center;
+        width: 80%;
         border: 1px solid grey;
-        
+        border-radius: 10%;
     }
 
     nav .one {
@@ -416,15 +406,16 @@ footer nav a {
         background-color: lightgrey;
 
         color: black;
-        
+
     }
 
     .header-img {
 
-        width: 500px;
+        width: 100%;
 
     }
 
+   
     .container {
 
         max-width: 500px;
@@ -435,24 +426,42 @@ footer nav a {
 
         flex-direction: column;
 
-        align-items: baseline;
+        align-items: center;
+
+        width: 500px;
 
     }
-    
+
+    .text-container {
+
+        width: 90%;
+    }
     .boxes {
 
         flex-direction: column;
 
         align-items: center;
 
-        padding: 5%;
-        
-    }
-
-    #box5, #box6, #box7, #box8, #box9, #box10, .bottom-content, footer {
-
-        display: none;
+        width: 100%;
 
     }
 
-}    
+    .middle-content .boxes .box {
+
+        width: 21%;
+        height: 110px;
+    }
+
+    .bottom-content {
+
+        flex-direction: column;
+
+    }
+
+    footer {
+
+        align-content: center;
+
+    }
+
+}   
